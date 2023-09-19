@@ -1,6 +1,14 @@
 server:
   port: 8080
 spring:
+  zipkin:
+    base-url: http://192.168.56.100:9411/
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
   cloud:
     nacos:
       discovery:
@@ -29,3 +37,13 @@ seata:
 
 mybatis:
   mapper-locations: classpath:mapper/*mapper.xml
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          openfeign:
+            debug
+          sleuth:
+            debug
