@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: product
+  data:
+    redis:
+      host: 192.168.56.100
+      port: 6379
+  datasource:
+    url: jdbc:mysql://192.168.56.102:3306/business?characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    max-idle: 10
+    max-wait: 10000
+    min-idle: 5
+    initial-size: 5
+
+mybatis:
+  mapper-locations: classpath:mapper/*mapper.xml
